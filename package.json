@@ -1,0 +1,11 @@
+{
+  "name": "shortcode-populate",
+  "version": "1.0.0",
+  "description": "App to populate Wordpress shortcode",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Antonio Carlos",
+  "license": "ISC"
+}
