@@ -16,6 +16,15 @@ router.post('/', (req, res) => {
   newRevenda.save().then(revenda => res.json(revenda))
 })
 
+router.put('/:id', (req, res) => {
+  Revenda.findOneAndUpdate({_id: req.params.id}, req.body, {new: true}, (err, revenda) => {
+      if(err){
+          res.send(err)
+      }
+      res.json(revenda)
+  })
+})
+
 router.delete('/:id', (req, res) => {
   Revenda.findById(req.params.id)
     .then(revenda => revenda.remove().then(() => res.json({ success: true })))
