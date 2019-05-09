@@ -1,17 +1,20 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
+const revendas = require('./routes/api/revendas')
 
 const app = express()
 
 //Bodyparser Middleware
 app.use(bodyParser.json())
 
-const db = 'mongodb://<dbuser>:<dbpassword>@ds153566.mlab.com:53566/shortcode-populate'
+const db = 'mongodb://antonio:a12345@ds153566.mlab.com:53566/shortcode-populate'
 
 mongoose.connect(db, { useNewUrlParser: true })
   .then(() => console.log('MongoDB Conectado'))
   .catch(erro => console.log(erro))
+
+app.use('/api/revendas', revendas)
 
 const port = 5000
 
