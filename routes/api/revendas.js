@@ -16,4 +16,12 @@ router.post('/', (req, res) => {
   newRevenda.save().then(revenda => res.json(revenda))
 })
 
+router.delete('/:id', (req, res) => {
+  Revenda.findById(req.params.id)
+    .then(revenda => revenda.remove().then(() => res.json({ success: true })))
+    .catch(err => res.status(404).json({ success: false }))
+})
+
+module.exports = router
+
 module.exports = router
