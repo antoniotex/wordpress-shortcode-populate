@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 //Create a Schema
 const RevendaSchema = new Schema({
-    name: {
+    nome: {
       type: String,
-      required: true
+      // required: true
     },
     logo: {
       type: String,
